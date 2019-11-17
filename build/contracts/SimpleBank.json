@@ -1,0 +1,195 @@
+{
+  "contractName": "SimpleBank",
+  "abi": [
+    {
+      "name": "Enrolled",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "accountAddress",
+          "indexed": true
+        }
+      ],
+      "anonymous": false,
+      "type": "event"
+    },
+    {
+      "name": "DepositMade",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "accountAddress",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "indexed": false,
+          "unit": "wei"
+        }
+      ],
+      "anonymous": false,
+      "type": "event"
+    },
+    {
+      "name": "Withdrawal",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "accountAddress",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "withdrawAmount",
+          "indexed": false,
+          "unit": "wei"
+        },
+        {
+          "type": "uint256",
+          "name": "newBalance",
+          "indexed": false,
+          "unit": "wei"
+        }
+      ],
+      "anonymous": false,
+      "type": "event"
+    },
+    {
+      "outputs": [],
+      "inputs": [],
+      "constant": false,
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "name": "balances",
+      "outputs": [
+        {
+          "type": "uint256",
+          "unit": "wei",
+          "name": "out"
+        }
+      ],
+      "inputs": [],
+      "constant": true,
+      "payable": false,
+      "type": "function",
+      "gas": 662
+    },
+    {
+      "name": "enroll",
+      "outputs": [
+        {
+          "type": "bool",
+          "name": "out"
+        }
+      ],
+      "inputs": [],
+      "constant": false,
+      "payable": false,
+      "type": "function",
+      "gas": 36945
+    },
+    {
+      "name": "deposit",
+      "outputs": [
+        {
+          "type": "uint256",
+          "unit": "wei",
+          "name": "out"
+        }
+      ],
+      "inputs": [],
+      "constant": false,
+      "payable": true,
+      "type": "function",
+      "gas": 37471
+    },
+    {
+      "name": "withdraw",
+      "outputs": [
+        {
+          "type": "uint256",
+          "unit": "wei",
+          "name": "out"
+        }
+      ],
+      "inputs": [
+        {
+          "type": "uint256",
+          "unit": "wei",
+          "name": "withdrawAmount"
+        }
+      ],
+      "constant": false,
+      "payable": true,
+      "type": "function",
+      "gas": 39371
+    },
+    {
+      "name": "userBalances",
+      "outputs": [
+        {
+          "type": "uint256",
+          "unit": "wei",
+          "name": "out"
+        }
+      ],
+      "inputs": [
+        {
+          "type": "address",
+          "name": "arg0"
+        }
+      ],
+      "constant": true,
+      "payable": false,
+      "type": "function",
+      "gas": 825
+    },
+    {
+      "name": "enrolled",
+      "outputs": [
+        {
+          "type": "bool",
+          "name": "out"
+        }
+      ],
+      "inputs": [
+        {
+          "type": "address",
+          "name": "arg0"
+        }
+      ],
+      "constant": true,
+      "payable": false,
+      "type": "function",
+      "gas": 855
+    },
+    {
+      "name": "owner",
+      "outputs": [
+        {
+          "type": "address",
+          "name": "out"
+        }
+      ],
+      "inputs": [],
+      "constant": true,
+      "payable": false,
+      "type": "function",
+      "gas": 731
+    }
+  ],
+  "bytecode": "0x740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a052341561009857600080fd5b336002556103ae56600436101561000d57610307565b600035601c52740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a052637bb98a6860005114156100d45734156100ba57600080fd5b60003360e05260c052604060c0205460005260206000f350005b63e65f2a7e600051141561013f5734156100ed57600080fd5b600160013360e05260c052604060c02055337f6132d0e5700fe03060d64172a9ce706f525f7dfacb454a300ba78f4b50fc872260006000a260013360e05260c052604060c0205460005260206000f350005b63d0e30db060005114156101a4573460003360e05260c052604060c020553461014052337fd15c9547ea5c06670c0010ce19bc32d54682a4b3801ece7f3ab0c3f17106b4bb6020610140a260003360e05260c052604060c0205460005260206000f350005b632e1a7d4d60005114156102515760003360e05260c052604060c02054600435106101ce57600080fd5b60003360e05260c052604060c020600435815410156101ec57600080fd5b6004358154038155506004356101405260003360e05260c052604060c0205461016052337fdf273cb619d95419a9cd0ec88123a0538c85064229baa6363788f743fff90deb6040610140a260003360e05260c052604060c0205460005260206000f350005b6326224c64600051141561029857341561026a57600080fd5b600435602051811061027b57600080fd5b50600060043560e05260c052604060c0205460005260206000f350005b6310eb0e0e60005114156102df5734156102b157600080fd5b60043560205181106102c257600080fd5b50600160043560e05260c052604060c0205460005260206000f350005b638da5cb5b60005114156103065734156102f857600080fd5b60025460005260206000f350005b5b60006000fd5b6100a16103ae036100a16000396100a16103ae036000f3",
+  "deployedBytecode": "0x600436101561000d57610307565b600035601c52740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a052637bb98a6860005114156100d45734156100ba57600080fd5b60003360e05260c052604060c0205460005260206000f350005b63e65f2a7e600051141561013f5734156100ed57600080fd5b600160013360e05260c052604060c02055337f6132d0e5700fe03060d64172a9ce706f525f7dfacb454a300ba78f4b50fc872260006000a260013360e05260c052604060c0205460005260206000f350005b63d0e30db060005114156101a4573460003360e05260c052604060c020553461014052337fd15c9547ea5c06670c0010ce19bc32d54682a4b3801ece7f3ab0c3f17106b4bb6020610140a260003360e05260c052604060c0205460005260206000f350005b632e1a7d4d60005114156102515760003360e05260c052604060c02054600435106101ce57600080fd5b60003360e05260c052604060c020600435815410156101ec57600080fd5b6004358154038155506004356101405260003360e05260c052604060c0205461016052337fdf273cb619d95419a9cd0ec88123a0538c85064229baa6363788f743fff90deb6040610140a260003360e05260c052604060c0205460005260206000f350005b6326224c64600051141561029857341561026a57600080fd5b600435602051811061027b57600080fd5b50600060043560e05260c052604060c0205460005260206000f350005b6310eb0e0e60005114156102df5734156102b157600080fd5b60043560205181106102c257600080fd5b50600160043560e05260c052604060c0205460005260206000f350005b638da5cb5b60005114156103065734156102f857600080fd5b60025460005260206000f350005b5b60006000fd",
+  "source": "# Objective: Implement the missing parts of the contract\n# The contract is missing event information, state variables and functions bodies\n\n# It might be easier to write the Vyper contract at vyper.online to \n# get syntax highlighting and paste your complete contract here \n\n# Vyper docs - https://vyper.readthedocs.io/en/latest/\n\n#\n# Events must be declared at the top of the file\n# https://vyper.readthedocs.io/en/latest/logging.html\n\nEnrolled: event({ accountAddress: indexed(address)  })\n\n# The DepositMade event should log an accountAddress and an amount (in wei)\n\nDepositMade: event ({ accountAddress: indexed(address), amount : wei_value})\n\n# Declare an event called 'Withdrawal' that logs an accountAddress, withdrawAmount, \n# and the new balance of the account\n\nWithdrawal: event ({accountAddress: indexed(address), withdrawAmount: wei_value, newBalance : wei_value})\n\n#\n# State variables\n# https://vyper.readthedocs.io/en/latest/structure-of-a-contract.html#state-variables\n\n# Declare 3 state varaibles: \n# - userBalances (a public mapping of address to integer)\n# - enrolled (a public mapping of address to boolean)\n# - owner (a public address)\n\nuserBalances: public(map(address, wei_value))\nenrolled: public(map(address, bool))\nowner: public(address)\n\n#\n# Functions\n# https://vyper.readthedocs.io/en/latest/structure-of-a-contract.html#functions\n\n# @notice set the contract creator as the owner\n\n@public\ndef __init__():\n    self.owner = msg.sender\n\n# @notice Get balance\n# @return The balance of the user\n# @dev Use the keyword that indicates the state is not changed\n\n@public\n@constant\ndef balances() -> wei_value:\n    return self.userBalances[msg.sender]\n\n\n# @notice Enroll a customer with the bank\n# @return The users enrolled status\n# @dev Emit the appropriate event\n\n@public\ndef enroll() -> bool:\n    self.enrolled[msg.sender] = True\n    log.Enrolled(msg.sender)\n    return self.enrolled[msg.sender]\n\n\n# @notice Deposit ether into bank\n# @return The balance of the user after the deposit is made\n# Add the appropriate keyword so that this function can receive ether\n# @dev Use the appropriate global variables to get the transaction sender and value\n# Emit the appropriate event    \n\n@public\n@payable\ndef deposit() -> wei_value:\n    self.userBalances[msg.sender] = msg.value\n    log.DepositMade(msg.sender, msg.value)\n    return self.userBalances[msg.sender]\n\n# @notice Withdraw ether from bank\n# @dev This does not return any excess ether sent to it\n# @param withdrawAmount amount you want to withdraw\n# @return The balance remaining for the user\n# @dev Emit the appropriate event    \n\n@public\n@payable\ndef withdraw(withdrawAmount: wei_value) -> wei_value:\n    assert(withdrawAmount < self.userBalances[msg.sender])\n    self.userBalances[msg.sender] -= withdrawAmount\n    log.Withdrawal(msg.sender, withdrawAmount, self.userBalances[msg.sender])\n    return self.userBalances[msg.sender]\n\n# With no fallback function specified, a fallback is automatically generated \n# that will revert any transaction that it processes. This is not the case in Solidity.\n",
+  "sourcePath": "/home/ali/EthProjects/simple-bank-vyper/contracts/SimpleBank.vy",
+  "compiler": {
+    "name": "vyper",
+    "version": "0.1.0b13+commit.375fb27"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-11-17T19:28:28.715Z"
+}
